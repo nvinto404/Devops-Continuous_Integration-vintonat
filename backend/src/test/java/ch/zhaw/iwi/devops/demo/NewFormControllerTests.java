@@ -49,4 +49,15 @@ public class NewFormControllerTests {
         controller.updateNewForm(1, updatedForm);
         assertEquals("Aktualisierter Name", controller.getNewForm(1).getName());
     }
+
+    @Test
+    public void testUpdateDescription() {
+        NewFormController controller = new NewFormController();
+        NewForm newForm = new NewForm(1, "Title", "Description", "2024-01-01", "2024-12-31");
+        controller.createNewForm(newForm);
+        String newDescription = "Updated Description";
+        controller.updateDescription(1, newDescription);
+        assertEquals(newDescription, controller.getNewForm(1).getDescription());
+    }
+
 }
