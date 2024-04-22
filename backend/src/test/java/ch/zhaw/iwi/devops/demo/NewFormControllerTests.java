@@ -60,4 +60,15 @@ public class NewFormControllerTests {
         assertEquals(newDescription, controller.getNewForm(1).getDescription());
     }
 
+    @Test
+    public void testUpdateEndDate() {
+        NewFormController controller = new NewFormController();
+        NewForm newForm = new NewForm(1, "Title", "Description", "2024-01-01", "2024-12-31");
+        controller.createNewForm(newForm);
+
+        String newEndDate = "2025-01-01";
+        controller.updateEndDate(1, newEndDate);
+
+        assertEquals(newEndDate, controller.getNewForm(1).getEndDate());
+    }
 }
