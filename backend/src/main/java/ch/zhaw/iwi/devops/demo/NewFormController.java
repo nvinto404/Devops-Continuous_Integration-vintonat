@@ -67,4 +67,10 @@ public class NewFormController {
         }
     }
 
+    @PatchMapping("/{id}/endDate")
+    public void updateEndDate(@PathVariable Integer id, @RequestBody String newEndDate) {
+    if (newForms.containsKey(id)) {
+        newForms.get(id).setEndDate(newEndDate);
+    }
+}
 }
