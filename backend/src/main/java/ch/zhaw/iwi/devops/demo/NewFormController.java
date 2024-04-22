@@ -59,4 +59,12 @@ public class NewFormController {
     private int generateNewId() {
         return newForms.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
     }
+
+    @PatchMapping("/{id}/description")
+    public void updateDescription(@PathVariable Integer id, @RequestBody String newDescription) {
+        if (newForms.containsKey(id)) {
+            newForms.get(id).setDescription(newDescription);
+        }
+    }
+
 }
