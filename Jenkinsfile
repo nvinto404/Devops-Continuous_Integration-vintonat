@@ -11,7 +11,6 @@ pipeline {
         stage ('Test') {
             steps {
                 sh 'echo test'
-                junit '**/test-results/test/*.xml'
             }
         }
         stage ('Deploy') {
