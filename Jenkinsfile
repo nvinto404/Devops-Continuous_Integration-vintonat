@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        timestamps {
+       
  stage ('Checkout') {
             steps {
                 sh 'echo checkout'
@@ -18,6 +18,5 @@ pipeline {
                 sh 'echo deploy'
             }
         }
-    }
     }
 }
