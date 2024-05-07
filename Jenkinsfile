@@ -1,7 +1,8 @@
 pipeline {
     agent any 
     stages {
-        stage ('Checkout') {
+        timestamps {
+ stage ('Checkout') {
             steps {
                 sh 'echo checkout'
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nvinto404/Devops-Continuous_Integration-vintonat']])
@@ -18,5 +19,6 @@ pipeline {
                 sh 'echo deploy'
             }
         }
+    }
     }
 }
